@@ -5,16 +5,12 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Sign up</h1>
         <p class="text-xs-center">
-          <a href="">Have an account?</a>
+          <a [routerLink]="['/login']" >Have an account?</a>
         </p>
 
-        <ul class="error-messages">
-          <li>That email is already taken</li>
-        </ul>
-
-        <form #heroForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #realForm="ngForm">
           <fieldset class="form-group">
-            <input class="form-control form-control-lg" type="text" placeholder="Your Name" [(ngModel)]="userName" name="userName" id="userName" required>
+            <input class="form-control form-control-lg" type="text" placeholder="Your Name" [(ngModel)]="userName" name="userName" id="userName" required >
           </fieldset>
           <fieldset class="form-group">
             <input class="form-control form-control-lg" type="text" placeholder="Email" [(ngModel)]="email" name="email" id="email" required email>
@@ -22,7 +18,7 @@
           <fieldset class="form-group">
             <input class="form-control form-control-lg" type="password" placeholder="Password" [(ngModel)]="password" name="password" id="password" required>
           </fieldset>
-          <button type="submit" class="btn btn-lg btn-primary pull-xs-right" [disabled]="!heroForm.form.valid">
+          <button type="submit" class="btn btn-lg btn-primary pull-xs-right" [disabled]="!realForm.form.valid">
             Sign up
           </button>
         </form>

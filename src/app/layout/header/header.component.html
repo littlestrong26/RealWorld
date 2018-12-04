@@ -6,7 +6,7 @@
         <!-- Add "active" class when you're on that page" -->
         <a class="nav-link active" [routerLink]="['/home']">Home</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="status">
         <a class="nav-link" [routerLink]="['/create']">
           <i class="ion-compose"></i>&nbsp;New Post
         </a>

@@ -5,24 +5,24 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center">Your Settings</h1>
 
-        <form>
+        <form (ngSubmit)="onSubmit()" #realForm="ngForm">
           <fieldset>
               <fieldset class="form-group">
-                <input class="form-control" type="text" placeholder="URL of profile picture">
+                <input class="form-control" type="text" [(ngModel)]="model.img" placeholder="URL of profile picture" name="img" id="img">
               </fieldset>
               <fieldset class="form-group">
-                <input class="form-control form-control-lg" type="text" placeholder="Your Name">
+                <input class="form-control form-control-lg" type="text" [(ngModel)]="model.name" placeholder="Your Name" id="name" name="name" required>
               </fieldset>
               <fieldset class="form-group">
-                <textarea class="form-control form-control-lg" rows="8" placeholder="Short bio about you"></textarea>
+                <textarea class="form-control form-control-lg" rows="8" [(ngModel)]="model.info" placeholder="Short bio about you" id="info" name="info"></textarea>
               </fieldset>
               <fieldset class="form-group">
-                <input class="form-control form-control-lg" type="text" placeholder="Email">
+                <input class="form-control form-control-lg" type="text" [(ngModel)]="model.email" placeholder="Email" id="Email" name="Email" required email>
               </fieldset>
               <fieldset class="form-group">
-                <input class="form-control form-control-lg" type="password" placeholder="Password">
+                <input class="form-control form-control-lg" type="password" [(ngModel)]="model.password" placeholder="Password" id="password" name="password" required>
               </fieldset>
-              <button class="btn btn-lg btn-primary pull-xs-right">
+              <button type="submit" class="btn btn-lg btn-primary pull-xs-right" [disabled]="!realForm.form.valid">
                 Update Settings
               </button>
           </fieldset>

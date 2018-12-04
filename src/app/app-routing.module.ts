@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules, NoPreloading } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
         component: RegisterComponent
       },
       {
-        path: 'profile',
+        path: 'profile/:id',
         component: ProfileComponent
       },
       {
@@ -44,7 +44,7 @@ const routes: Routes = [
         component: EditComponent
       },
       {
-        path: 'article',
+        path: 'article/:id',
         component: ArticleComponent
       }
     ],
